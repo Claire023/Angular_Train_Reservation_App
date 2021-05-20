@@ -1,0 +1,20 @@
+<div class="container">
+ <form [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="currentTrain">Séléctionnez un train* : </label>
+    <select class="form-control" formControlName="currentTrain">
+      <option  *ngFor="let train of Trains" [value]="train._id">{{train.numTrain}} ({{train.villeDepart}} - {{train.villeArrivee}}) / Départ à {{train.heureDepart}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="numberPlaces">Nombres de places : </label>
+    <input class="form-control" type="text" formControlName="numberPlaces">
+  </div>
+
+ 
+    <button type="submit" class="btn btn-danger">Créer la réservation</button>
+    <button type="button" class="btn btn-primary"><a routerLink="/trains">Listes des trains</a></button>
+
+ </form>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">NumTrain</th>
+          <th scope="col">Ville Départ</th>
+          <th scope="col">Ville Arrivée</th>
+          <th scope="col">Heure du Départ</th>
+          <th scope="col">Supprimer</th>
+          <th scope="col">Editer</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+ <tr *ngFor="let train of trains">
+  
+          <td>{{train.numTrain}}</td>
+          <td>{{train.villeDepart}}</td>
+          <td>{{train.villeArrivee}}</td>
+          <td>{{train.heureDepart}}</td>
+          <td><button type="button" class="btn btn-danger"><a href="/" (click)="onDeleteTrainClick(Train)">Supprimer</a></button></td> 
+          <td><button type="button" class="btn btn-success"><a routerLink="/" (click)="editTrain(train._id)" >Éditer</a></button></td>
+        </tr>
+  
+      </tbody>
+    </table>
+  
+    <button type="button" class="btn btn-primary"><a routerLink="/add-trains">Ajouter un train</a></button>
+     <button type="button" class="btn btn-warning"><a routerLink="/booktrains">Voir toutes les Réservations</a></button>
+ 
+
+</div>
+
+

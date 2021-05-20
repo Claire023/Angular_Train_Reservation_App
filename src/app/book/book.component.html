@@ -1,0 +1,43 @@
+
+
+
+<div class="container">
+
+
+<h2 class="text-center">Liste de toutes les réservations</h2>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro Réservation</th>
+        <th scope="col">Train</th>
+        <th scope="col">Nb Places réservées</th>
+        <th scope="col">Supprimer</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let BookTrain of BookTrains">
+          <td>{{BookTrain.bookNumber}}</td>
+          <td *ngIf="BookTrain.currentTrain">{{BookTrain.currentTrain.numTrain}}</td>
+          <td>{{BookTrain.numberPlaces}}</td>
+          <td><button type="button" class="btn btn-danger"><a  href="/" (click)="onDeleteBookClick(BookTrain)">Supprimer</a></button></td> 
+ 
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-warning"><a href="/add-booking">Faire une nouvelle réservation</a></button>
+  <button type="button" class="btn btn-primary"><a routerLink="/trains">Listes des trains</a></button>
+</div>
+
+
+
+
+
+
+
+
